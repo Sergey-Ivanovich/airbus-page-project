@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIRBUS - AIRCRAFT</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(360deg, #c9f4fe, #26d3ff);
+      }
+
+      hr {
+        padding: 0px;
+        height: 4px;
+        background-color: black;
+      }
+
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        line-height: 25px;
+        font-size: 150%;
+        text-align: center;
+        padding-top: 20px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 20px;
+        color: white;
+        background-color: #5ad6ff;
+        border-radius: 20px;
+        width: 90%;
+        transition: all 200ms ease-in-out;
+      }
+
+      button:hover {
+        background: white;
+        color: black;
+      }
+
+      .title {
+        border: 4px solid black;
+        border-radius: 15px;
+      }
+
+      .plane-img {
+        width: 90%;
+        max-width: 700px;
+        display: block;
+        margin: 0 auto;
+        border: 5px solid black;
+        border-radius: 5px;
+      }
+
+      .airbus-logo {
+        display: block;
+        margin: 0 auto;
+        width: 30%;
+      }
+
+      .container {
+        width: 90%;
+        margin: 0 auto;
+        border: 10px;
+        border: 5px solid black;
+        border-radius: 15px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 800px;
+        background-color: white;
+      }
+
+      .content {
+        padding: 10px;
+      }
+
+      .airbus-link {
+        display: block;
+        text-align: center;
+        margin-top: 0px;
+        padding: 0px;
+        font-size: 16px;
+      }
+      .A320 {
+        border-radius: 20px;
+        padding: 10px 0px;
+        transition: all 800ms ease-in-out;
+      }
+
+      .A320:hover {
+        background-color: #b3ecff;
+      }
+
+      .A350 {
+        border-radius: 20px;
+        padding: 10px 0px;
+        transition: all 800ms ease-in-out;
+      }
+
+      .A350:hover {
+        background-color: #b3ecff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="title" id="title">
+          <img
+            class="airbus-logo"
+            src="https://static.wixstatic.com/media/35d8fa_7d32b4a72e4a4ca0b325ab28e9dc86d0~mv2.png/v1/fill/w_560,h_412,al_c,lg_1,q_85,enc_auto/airbus-logo-initials.png"
+            alt="Airbus Logo"
+          />
+          <h1>AIRBUS</h1>
+        </div>
+      </div>
+      <hr />
+      <div class="content">
+        <div class="A320">
+          <h2>AIRBUS A320</h2>
+          <img
+            class="plane-img"
+            src="https://aeroaffaires.fr/wp-content/uploads/2018/08/airbus_a320-1-jpg.png"
+            alt="Airbus a320 image"
+            width="200px"
+          />
+          <p>
+            The world's two <em>leading <strong>narrowbody</strong></em> jets
+            are variations of the Boeing 737 and the Airbus A320. They might not
+            be as glamorous as their larger and more imposing siblings, such as
+            the 787 or the A350, but they are trusted workhorses of most fleets
+            all over the world.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="content">
+        <div class="A350">
+          <h2>AIRBUS A350</h2>
+          <img
+            class="plane-img"
+            src="https://upload.wikimedia.org/wikipedia/commons/b/bc/A350_Berlin_ILA_18.jpg"
+            alt="A350 image"
+            width="200px"
+          />
+          <p>
+            The A350 is <em>truly <strong>innovative</strong></em
+            >, from the wing design that morphs and changes shape in flight for
+            optimal efficiency to the Airbus-pioneered fly-by-wire flight
+            controls and onboard systems for reduced pilot workload.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="content">
+        <p class="airbus-link">
+          link to
+          <a href="https://www.airbus.com/en" target="_blank"> Airbus</a>
+        </p>
+      </div>
+      <div class="button">
+        <button class="orderButton">ORDER AIRCRAFT</button>
+      </div>
+      <p>Coded by Eric NOATA 😎</p>
+    </div>
+    <script>
+      function orderAircraft() {
+        let customerFirstName = prompt("What is you First Name?");
+        let customerLastName = prompt("What is your Last Name?");
+        let aircraftType = prompt(
+          "What Aircraft Type would you like to order? (A320 / A350)"
+        );
+        let aircraftQuantity = prompt(
+          "How Many Aircraft would You like to order?"
+        );
+
+        if (customerFirstName.length === 0 || customerLastName.length === 0) {
+          alert("Order unsuccessful, please input your name");
+        } else if (
+          aircraftType.toUpperCase() != "A320" &&
+          aircraftType.toUpperCase() != "A350"
+        ) {
+          alert(
+            "Sorry Mr/Mrs " +
+              customerLastName +
+              ", but aircraft type '" +
+              aircraftType +
+              "', is Unavailable"
+          );
+        } else if (aircraftQuantity === 0) {
+          alert(
+            "Sorry, but you cant't order " +
+              aircraftQuantity +
+              " amount of Aircraft"
+          );
+        } else {
+          alert(
+            "Thank you Mr/Mrs " +
+              customerLastName +
+              ", for placing your order of " +
+              aircraftQuantity +
+              " " +
+              aircraftType.toUpperCase() +
+              "(s)"
+          );
+        }
+      }
+
+      let orderButton = document.querySelector(".orderButton");
+      orderButton.addEventListener("click", orderAircraft);
+    </script>
+  </body>
+</html>
